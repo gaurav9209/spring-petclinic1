@@ -151,6 +151,19 @@
   <build>
     <plugins>
       <plugin>
+        <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.0</version>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
@@ -160,12 +173,8 @@
               <goal>enforce</goal>
             </goals>
             <configuration>
-              <rules>
-                <requireJavaVersion>
-                  <message>This build requires at least Java ${java.version}, update your JVM, and run the build again</message>
-                  <version>${java.version}</version>
-                </requireJavaVersion>
-              </rules>
+              <source>17</source>
+              <target>17</target>
             </configuration>
           </execution>
         </executions>
